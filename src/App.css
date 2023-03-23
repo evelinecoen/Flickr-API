@@ -1,46 +1,135 @@
- .App {
+
+.App {
   text-align: center;
+  display: flex;
+  flex-direction: column; 
 }
 
 img {
-  width: 200px;
+  border-radius: 2%;
   height: auto;
+  max-height: 200px;
+  width: auto;
+  max-width: 400px;
+}
+
+img:hover {
+  opacity: 0.4;
+  color: black;
+/*   border-radius: 20%; */    /* this doesn't work, find other solution */
+}
+
+.image-container {
+  position: relative;
+}
+
+/* .image-container:hover {
+  background: rgba(0, 0, 0, 0.5);
+} */
+
+.favorite-button {
+  position: absolute;
+  top: 70%;
+ left: 25%; 
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid white;
+  display: none;
+}
+
+.image-info {
+  position: absolute;
+  top: 30%;
+  /* left: 50%; */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  display: none;
+}
+
+.image-container:hover .favorite-button,
+.image-container:hover .image-info {
+  display: block;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: baseline;
+  align-content: space-evenly;
 }
 
 
+/* 
+
+ .App {
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+}
+
+img {
+  border-radius: 2%;
+  height: auto;
+  max-height: 200px;
+  width: auto;
+  max-width: 400px;
+}
+
+img:hover {
+  opacity: 0.4;
+  color: black;
+/*   border-radius: 20%; */    /* this doesn't work, find other solution */
 
 /*
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.image-container {
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.image-container:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.favorite-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: transparent;
   color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid white;
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+
+.image-container:hover .favorite-button {
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+.body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: baseline;
+  align-content: space-evenly;
+}
+
+
+ */
