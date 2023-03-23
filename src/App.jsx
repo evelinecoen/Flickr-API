@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 import Favorites from './components/Favorites'
-import Navbar from './components/Navbar'
 
 class App extends Component {
   constructor(props) {
@@ -51,7 +50,7 @@ class App extends Component {
   
   fetchPictures = () => {
     const { page } = this.state;
-    fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.REACT_APP_FLICKR_API_KEY}&tags=thriftedfashion&per_page=10&page=${page}&format=json&nojsoncallback=1`)
+    fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.REACT_APP_FLICKR_API_KEY}&tags=nature&per_page=10&page=${page}&format=json&nojsoncallback=1`)
       .then(response => response.json())
       .then(j => {
         let picArray = j.photos.photo.map(pic => {
@@ -69,11 +68,12 @@ class App extends Component {
               );
               const image = (
                 <div className="image-container" key={pic.id}>
-                  <img alt="dogs" src={srcPath} />
+                  <img className="image" alt="nature" src={srcPath} />
                   <div className="image-overlay">
                     <div className="image-info">
                       <div className="title">{title}</div>
-                      <div className="photographer">Photographer: {photographer}</div>
+                      <hr></hr>
+                      <div className="photographer"><i>{photographer}</i></div>
                     </div>
                     <div /* className="favorite-button" */><button className="favorite-button" onClick={event => this.handleFavoriteClick(event, srcPath)}>Favorite</button> </div>
                   </div>
@@ -97,18 +97,10 @@ class App extends Component {
     return (
       
     <Router>
-      <Navbar/>
       <div className="App">
-        <div className="header">
-        <h1>Your online thrift shop</h1>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
+        <div /* className="header" */>
+        <h1>Discover the latest pictures</h1>
             <Link to="/favorites">Favorites</Link>
-          </li>
-        </ul>
         </div>
         <div className="body">
         <Routes>

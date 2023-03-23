@@ -5,20 +5,34 @@
   flex-direction: column; 
 }
 
-img {
+.image {
+  height: 190px;
+  width: 280px;
+  object-fit: cover;
+  margin: 5% 5%;
   border-radius: 2%;
-  height: auto;
-  max-height: 200px;
-  width: auto;
-  max-width: 400px;
+  box-shadow: 2px 2px lightgrey;
 }
 
-img:hover {
-  opacity: 0.4;
+.favorite-image {
+  height: 190px;
+  width: 280px;
+  object-fit: cover;
+  margin: 5% 5%;
+  border-radius: 2%;
+  box-shadow: 2px 2px lightgrey;
+}
+
+.image:hover {
+  opacity: 0.5;
+  background-color: rgba(0, 0, 0, .9);
+}
+/* .img-container:hover  {
+  opacity: 0.5;
   color: black;
-/*   border-radius: 20%; */    /* this doesn't work, find other solution */
+  background-color: rgba(0, 0, 0, .5);
 }
-
+ */
 .image-container {
   position: relative;
 }
@@ -30,7 +44,8 @@ img:hover {
 .favorite-button {
   position: absolute;
   top: 70%;
- left: 25%; 
+  left: 50%; 
+  transform: translateX(-35%); 
   padding: 10px 20px;
   border-radius: 20px;
   background-color: transparent;
@@ -40,18 +55,33 @@ img:hover {
   cursor: pointer;
   border: 2px solid white;
   display: none;
-}
+  }
+  
+  .favorite-button:hover {
+    background-color: rgba(0, 0, 0, .2);
+  }
 
-.image-info {
-  position: absolute;
-  top: 30%;
-  /* left: 50%; */
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  display: none;
-}
+  .image-info {
+    position: absolute;
+    top: 25%;
+    left: 50%; 
+    transform: translateX(-45%);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+    }
+
+ 
+
+  .title , .photographer{
+    width: 240px;
+  } 
+
+  .photographer {
+    font-weight: 200;
+  }
 
 .image-container:hover .favorite-button,
 .image-container:hover .image-info {
@@ -65,6 +95,14 @@ img:hover {
   justify-content: space-around;
   align-items: baseline;
   align-content: space-evenly;
+}
+
+hr {
+  width:40%; 
+  height:2px; 
+  border:none; 
+  color:white; 
+  background-color: white;
 }
 
 
