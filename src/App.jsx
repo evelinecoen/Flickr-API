@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link , Switch} from 'react-router-dom';
 import './App.css';
 import Favorites from './components/Favorites'
 
@@ -61,7 +61,7 @@ class App extends Component {
               const title = j.photo.title._content;
               const photographer = j.photo.owner.realname || j.photo.owner.username;
               const imageInfo = (
-                <div className="image-info" /* style={{ position: "absolute", top: 0, left: 0, backgroundColor: "white", opacity: 0.8, padding: "5px" }} */>
+                <div className="image-info">
                   <div className="title">{title}</div>
                   <div className="photographer">Photographer: {photographer}</div>
                 </div>
@@ -75,7 +75,7 @@ class App extends Component {
                       <hr></hr>
                       <div className="photographer"><i>{photographer}</i></div>
                     </div>
-                    <div /* className="favorite-button" */><button className="favorite-button" onClick={event => this.handleFavoriteClick(event, srcPath)}>Favorite</button> </div>
+                    <div><button className="favorite-button" onClick={event => this.handleFavoriteClick(event, srcPath)}>Favorite</button> </div>
                   </div>
                 </div>
               );
@@ -98,7 +98,7 @@ class App extends Component {
       
     <Router>
       <div className="App">
-        <div /* className="header" */>
+        <div>
         <h1>Discover the latest pictures</h1>
             <Link to="/favorites">Favorites</Link>
         </div>
@@ -122,6 +122,44 @@ class App extends Component {
 export default App;
 
 
+/* render() {
+  const { location } = this.props;
+
+  return (
+    <Router>
+      <div className="App">
+        <div>
+          <h1>Discover the latest pictures</h1>
+          {location.pathname === '/' && (
+            <Link to="/favorites">Favorites</Link>
+          )}
+        </div>
+        <div className="body">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  {this.state.pictures}
+                  <div
+                    ref={loadingRef => (this.loadingRef = loadingRef)}
+                    style={{ height: '10px' }}
+                  >
+                    {this.state.loading && 'Loading...'}
+                  </div>
+                </>
+              }
+            />
+            <Route
+              path="/favorites"
+              element={<Favorites favorites={this.state.favorites} />}
+            />
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
+} */
 
 
 

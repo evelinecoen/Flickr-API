@@ -5,6 +5,10 @@
   flex-direction: column; 
 }
 
+a {
+/*   text-decoration: none;
+ */  color: black
+}
 .image {
   height: 190px;
   width: 280px;
